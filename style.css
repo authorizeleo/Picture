@@ -1,0 +1,213 @@
+*{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid; */
+    color:#72efdd
+}
+
+
+h1{
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+
+p{
+    letter-spacing: 2px;
+    color:rgba(0,0,0,0.5)
+}
+.out_picture_box{
+    background-color: #e0fbfc;
+    perspective: 1300px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/*圓圈的部分*/
+.clickRadio{
+    display: flex;
+    justify-content: center;
+    margin-top:5px;
+    user-select: none
+}
+
+
+
+
+
+input{
+   display: none;
+}
+
+.clickRadio > label{
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-left:35px;
+    background-color: #005F5E;
+    position: relative;
+}
+
+.clickRadio > label:hover{
+    background-color: #A3CDEB;
+}
+
+.clickRadio > label::after{
+    content: "";
+    position: absolute;
+    left:50%;
+    top:50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-left:20px;
+    background-color: #fb8500;
+    margin-left: -11px;
+    margin-top: -9px;
+    transform: scale(1.1);
+    opacity: 0;
+}
+
+.picture_box > input:nth-of-type(1):checked ~ .clickRadio > label:nth-of-type(1),
+.picture_box > input:nth-of-type(2):checked ~ .clickRadio > label:nth-of-type(2),
+.picture_box > input:nth-of-type(3):checked ~ .clickRadio > label:nth-of-type(3),
+.picture_box > input:nth-of-type(4):checked ~ .clickRadio > label:nth-of-type(4),
+.picture_box > input:nth-of-type(5):checked ~ .clickRadio > label:nth-of-type(5),
+.picture_box > input:nth-of-type(6):checked ~ .clickRadio > label:nth-of-type(6){
+    background-color: #fb8500;
+}
+
+.picture_box > input:nth-of-type(1):checked ~ .clickRadio > label:nth-of-type(1)::after,
+.picture_box > input:nth-of-type(2):checked ~ .clickRadio > label:nth-of-type(2)::after,
+.picture_box > input:nth-of-type(3):checked ~ .clickRadio > label:nth-of-type(3)::after,
+.picture_box > input:nth-of-type(4):checked ~ .clickRadio > label:nth-of-type(4)::after,
+.picture_box > input:nth-of-type(5):checked ~ .clickRadio > label:nth-of-type(5)::after,
+.picture_box > input:nth-of-type(6):checked ~ .clickRadio > label:nth-of-type(6)::after{
+    opacity: 1;
+}
+
+/* 圖片區 */
+.show_box{
+    /* border:1px solid; */
+    width:800px;
+    height:600px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.show_box > ul {
+    display: flex;
+}
+
+.show_box > ul  > li  {
+    transition:  1.5s;
+   transform: rotateX(0deg);
+}
+
+.show_box > ul  > li:hover{
+    transform: rotateY(-180deg);
+}
+
+
+
+/* 左右區 */
+
+
+
+.left_right >  label {
+    display: none;
+    position: absolute;
+    top: 50%;
+    padding: 30px;
+    box-shadow: inset 2px -2px 0 1px #5e60ce;
+    cursor: pointer;
+    transition: box-shadow 0.15s, margin 0.15s;
+  }
+
+  .left_right >  label:hover {
+    box-shadow: inset 3px -3px 0 2px lightpink;
+    margin: 0 0px;
+  }
+
+
+
+
+.picture_box > input:nth-of-type(10):checked ~ .show_box ul li:first-of-type {
+    margin-left: -900%;
+  }
+  .picture_box > input:nth-of-type(9):checked ~ .show_box ul li:first-of-type {
+    margin-left: -800%;
+  }
+  .picture_box > input:nth-of-type(8):checked ~ .show_box ul li:first-of-type {
+    margin-left: -700%;
+  }
+  .picture_box > input:nth-of-type(7):checked ~ .show_box ul li:first-of-type {
+    margin-left: -600%;
+  }
+  .picture_box > input:nth-of-type(6):checked ~.show_box ul li:first-of-type {
+    margin-left: -500%;
+  }
+  .picture_box > input:nth-of-type(5):checked ~ .show_box ul li:first-of-type {
+    margin-left: -400%;
+  }
+  .picture_box > input:nth-of-type(4):checked ~ .show_box ul li:first-of-type {
+    margin-left: -300%;
+  }
+  .picture_box > input:nth-of-type(3):checked ~.show_box ul li:first-of-type {
+    margin-left: -200%;
+  }
+  .picture_box > input:nth-of-type(2):checked ~ .show_box ul li:first-of-type {
+    margin-left: -100%;
+  }
+  .picture_box > input:nth-of-type(1):checked ~.show_box ul li:first-of-type {
+    margin-left: 0%;
+  }
+
+
+
+  .picture_box > input:first-of-type:checked ~  .left_right > label.goto-last,
+  .picture_box > input:nth-of-type(2):checked ~ .left_right > label:nth-of-type(1),
+  .picture_box > input:nth-of-type(3):checked ~ .left_right > label:nth-of-type(2),
+  .picture_box > input:nth-of-type(4):checked ~ .left_right > label:nth-of-type(3),
+  .picture_box > input:nth-of-type(5):checked ~ .left_right > label:nth-of-type(4),
+  .picture_box > input:nth-of-type(6):checked ~ .left_right > label:nth-of-type(5),
+  .picture_box > input:nth-of-type(7):checked ~ .left_right > label:nth-of-type(6),
+  .picture_box > input:nth-of-type(8):checked ~ .left_right > label:nth-of-type(7),
+  .picture_box > input:nth-of-type(9):checked ~ .left_right > label:nth-of-type(8),
+  .picture_box > input:nth-of-type(10):checked ~.left_right > label:nth-of-type(9),
+  .picture_box > input:nth-of-type(11):checked ~.left_right > label:nth-of-type(10) {
+    display: block;
+    left:25px;
+    right: auto;
+    transform: rotate(45deg);
+  }
+
+  .picture_box > input:nth-of-type(1):checked ~ .left_right > label:nth-of-type(2),
+  .picture_box > input:last-of-type:checked ~ .left_right > label.goto-first,
+  .picture_box > input:nth-of-type(2):checked ~ .left_right > label:nth-of-type(3),
+  .picture_box > input:nth-of-type(3):checked ~ .left_right > label:nth-of-type(4),
+  .picture_box > input:nth-of-type(4):checked ~ .left_right > label:nth-of-type(5),
+  .picture_box > input:nth-of-type(5):checked ~ .left_right > label:nth-of-type(6),
+  .picture_box > input:nth-of-type(6):checked ~ .left_right > label:nth-of-type(7),
+  .picture_box > input:nth-of-type(7):checked ~ .left_right > label:nth-of-type(8),
+  .picture_box > input:nth-of-type(8):checked ~ .left_right > label:nth-of-type(9),
+  .picture_box > input:nth-of-type(9):checked ~ .left_right > label:nth-of-type(10),
+  .picture_box > input:nth-of-type(10):checked ~ .left_right > label:nth-of-type(11),
+  .picture_box > input:nth-of-type(11):checked ~ .left_right > label:nth-of-type(12) {
+    display: block;
+    right: 25px;
+    left: auto;
+    transform: rotate(225deg);
+  }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS輪播功能</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="out_picture_box">
+    <h1 >小高的CSS照片秀練習</h1>
+    <p >800*600圖檔相簿</p>
+    <div class="picture_box">
+        
+        <input type="radio" name="picture" id="picture_1" checked="checked">
+        <input type="radio" name="picture" id="picture_2" >
+        <input type="radio" name="picture" id="picture_3">
+        <input type="radio" name="picture" id="picture_4">
+        <input type="radio" name="picture" id="picture_5">
+        <input type="radio" name="picture" id="picture_6">
+    
+        <div class="show_box">
+            <ul>
+                <li><img src="https://picsum.photos/800/600?random=15" alt=""></li>
+                <li><img src="https://picsum.photos/800/600?random=14" alt=""></li>
+                <li><img src="https://picsum.photos/800/600?random=13" alt=""></li>
+                <li><img src="https://picsum.photos/800/600?random=12" alt=""></li>
+                <li><img src="https://picsum.photos/800/600?random=11" alt=""></li>
+                <li><img src="https://picsum.photos/800/600?random=10" alt=""></li>
+            </ul>
+        </div>
+        <div class="left_right">
+            <label for="picture_1"></label>
+            <label for="picture_2"></label>
+            <label for="picture_3"></label>
+            <label for="picture_4"></label>
+            <label for="picture_5"></label>
+            <label for="picture_6"></label>
+            <label class="goto-first" for="picture_1"></label>
+            <label class="goto-last" for="picture_6"></label>
+        </div>
+
+    <div class="clickRadio">
+        <label for="picture_1"></label>
+        <label for="picture_2"></label>
+        <label for="picture_3"></label>
+        <label for="picture_4"></label>
+        <label for="picture_5"></label>
+        <label for="picture_6"></label>
+    </div>
+
+    </div>
+</div>
+</body>
+</html>
